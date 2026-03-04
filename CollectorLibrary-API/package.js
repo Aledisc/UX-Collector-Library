@@ -1,4 +1,4 @@
-require('dotenv').config(); // Esto carga el archivo .env
+require('dotenv').config();
 
 module.exports = {
   development: {
