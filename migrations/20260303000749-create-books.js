@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      autor_id: {
+      author_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
