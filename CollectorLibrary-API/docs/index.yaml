@@ -52,11 +52,11 @@ components:
 
       title:
         type: string
-        example: "Clean Code"
+        example: "El principito"
 
       genre:
         type: string
-        example: "Programming"
+        example: "Literatura infantil"
 
       ISBN:
         type: string
