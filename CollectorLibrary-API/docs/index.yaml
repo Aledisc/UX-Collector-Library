@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: "Collector Library API"
+  description: "API para la gestion de una biblioteca personal de libros y autores."
+  version: "1.0.0"
+  contact:
+    email: "jdiscua21@unitec.edu"
+
+servers:
+  - url: http://localhost:3000
+    description: Server Local de Desarrollo
+
+paths:
+  /authors:
+    $ref: "./paths/authors.yaml"
+
+
+components:
+  schemas:
+    Author:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Lucila Gamero de Medina"
+        birthday_year:
+          type: integer
+          example: 1873
+        nationality:
+          type: string
+          example: "Hondureña"

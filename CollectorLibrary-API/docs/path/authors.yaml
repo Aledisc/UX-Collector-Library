@@ -1,0 +1,48 @@
+get:
+  tags:
+    - Authors
+  summary: "Obtener todos los autores"
+  description: "Retorna una lista de todos los autores registrados en la biblioteca."
+  responses:
+    "200":
+      description: "Lista de autores obtenida con éxito"
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Author"
+    "500":
+      description: "Error interno del servidor"
+
+post:
+  tags:
+    - Authors
+  summary: "Crear un nuevo autor"
+  description: "Registra un autor en la base de datos con su nombre, año de nacimiento y nacionalidad."
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          typr: objetc
+          properties:
+            firstName:
+              type: string
+              example: "Gabriel"
+            lastName:
+              type: string
+              example: "Marquez"
+            birthYear:
+              type: string
+              example: "1927"
+            nationality:
+              type: string
+              nullable: true
+              example: "Colombian"
+          $ref: "#/components/schemas/Author"
+  responses:
+    "201":
+      description: "Autor creado exitosamente"
+    "400":
+      description: "Datos de entrada invalidos"
