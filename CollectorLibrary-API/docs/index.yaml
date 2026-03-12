@@ -13,6 +13,12 @@ servers:
 paths:
   /authors:
     $ref: "./paths/authors.yaml"
+  
+  /books:
+    $ref: "./paths/books.yaml"
+
+  /books/isbn/{isbn}:
+    $ref: "./paths/books_isbn.yaml"
 
 
 components:
@@ -34,3 +40,32 @@ components:
         nationality:
           type: string
           example: "Hondureña"
+    Book:
+      type: object
+      required:
+        - title
+        - ISBN
+      properties:
+        book_id:
+        type: integer
+        example: 1
+
+      title:
+        type: string
+        example: "Clean Code"
+
+      genre:
+        type: string
+        example: "Programming"
+
+      ISBN:
+        type: string
+        example: "9780132350884"
+
+      page_count:
+        type: integer
+        example: 464
+
+      author_id:
+        type: integer
+        example: 3

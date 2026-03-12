@@ -7,6 +7,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var routesTestRouter = require('./routes/routesTest');
 const authorsRouter = require('./routes/authors'); 
+const booksRouter = require('./routes/books');
+
+
 
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
@@ -17,15 +20,14 @@ const swaggerDocument = YAML.load('./docs/index.yaml');
 
 
 var app = express();
-
+app.use('/books', booksRouter);
 
 if (swaggerUi && swaggerUi.serve) {
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 } else {
-    console.error("Error: swaggerUi no se cargó correctamente");
+    console.error("Error: swaggerUi no se cargo correctamente");
 }
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 
