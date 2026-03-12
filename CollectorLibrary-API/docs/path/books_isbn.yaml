@@ -1,0 +1,28 @@
+get:
+  summary: Obtener libro por ISBN
+  description: Devuelve un libro usando su ISBN
+  tags:
+    - Books
+
+  parameters:
+    - name: isbn
+      in: path
+      required: true
+      description: ISBN del libro
+      schema:
+        type: string
+        example: "9780132350884"
+
+  responses:
+    "200":
+      description: Libro encontrado
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Book"
+
+    "404":
+      description: Libro no encontrado
+
+    "500":
+      description: Error interno del servidor

@@ -1,0 +1,14 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "Collector_Library",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "dependencies": {
+    "swagger-ui": "^5.32.0",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
+  }
+}

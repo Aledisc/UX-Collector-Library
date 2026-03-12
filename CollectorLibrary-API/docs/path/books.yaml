@@ -1,0 +1,26 @@
+post:
+  summary: Crear un nuevo libro
+  description: Registra un nuevo libro en la biblioteca
+  tags:
+    - Books
+
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Book"
+
+  responses:
+    "201":
+      description: Libro creado correctamente
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Book"
+
+    "400":
+      description: Datos invalidos
+
+    "500":
+      description: Error interno del servidor
